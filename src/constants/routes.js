@@ -1,7 +1,7 @@
 import BlogList from '../components/blog/blogList'
 // import Desc from '../components/desc/desc'
 // import Archive from '../components/archive/archive'
-// import About from '../components/about/about'
+import About from '../components/blog/about/about'
 // import Collect from '../components/collect/collect'
 import IndexPage from '../routes/IndexPage';
 export const routes = [{
@@ -36,7 +36,6 @@ export const routes = [{
   component: IndexPage
 }, {
   key: '关于我',
-  // path: '/app/about',
-  path: '/',
-  component: IndexPage
+  path: '/app/about',
+  component: About
 }]

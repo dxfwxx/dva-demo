@@ -1,5 +1,5 @@
 import React from 'react';
-// import BlogList from '../../components/blog/blogList';
+import BlogList from '../../components/blog/blogList';
 import HeaderCustom from '../../components/headers/headerCustom'
 import { connect } from 'dva';
 import { Route } from 'react-router-dom'
@@ -37,25 +37,23 @@ const Blogs = ({dispatch, blogs}) => {
   return (
     <div className="wrapper">
       <HeaderCustom></HeaderCustom>
-      <Layout className="wrapper-container">
+      {/* <Layout className="wrapper-container">
         <Layout className="wrapper-content">
           <Content
               style={{ padding: 24, margin: 0, minHeight: contentHeight, height: '100%', overflow: 'initial'}}
           >
             {
-              routes.map(({path, key, component, ...blogListProps}) => (
+              routes.map(({path, key, component}) => (
                 <Route key={key}
                   exact path={path}
-                  component={component} 
-                  {...blogListProps} />
+                  component={component}/>
                   
               ))
             } 
           </Content>
         </Layout>
-      </Layout>
-      {/* <h2> list of BlogList </h2> */}
-      {/* <BlogList {...blogListProps} /> */}
+      </Layout> */}
+      <BlogList {...blogListProps} />
     </div>
   );
 };

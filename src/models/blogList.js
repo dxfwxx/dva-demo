@@ -56,7 +56,10 @@ export default {
         setup({ dispatch, history }) {
             dispatch({
                 type: 'blogs/query',
-                payload: {}
+                payload: {
+                  'pageSize': 1,
+                  'pageNum': 2
+                }
             });
         },
       },
