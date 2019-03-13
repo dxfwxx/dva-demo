@@ -1,12 +1,12 @@
 export const menus = [{
     key: '首页',
-    link: '/app/index',
+    link: '/blog',
     title: '首页',
     icon: 'home'
   },
   {
     key: '归档',
-    link: '/app/archive',    
+    link: '/blog',    
     title: '归档',
     icon: 'edit'
   },

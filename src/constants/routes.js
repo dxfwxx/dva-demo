@@ -1,14 +1,14 @@
-import BlogList from '../components/blog/blogList'
-// import Desc from '../components/desc/desc'
-// import Archive from '../components/archive/archive'
-import About from '../components/blog/about/about'
-// import Collect from '../components/collect/collect'
+import Blogs from '../routes/blog/blog';
+import Login from '../routes/login/login';
 import IndexPage from '../routes/IndexPage';
+import BlogDesc from '../routes/desc/desc';
+// import Archive from '../components/archive/archive'
+// import About from '../components/blog/about/about';
+// import Collect from '../components/collect/collect'
 export const routes = [{
   key: '首页',
-  // path: '/app/index',
-  path: '/',
-  component: IndexPage
+  path: '/blog',
+  component: Blogs
 }, {
   key: '标签搜索',
   // path: '/app/tags/:tags',
@@ -26,9 +26,9 @@ export const routes = [{
   component: IndexPage
 }, {
   key: '博客详情',
-  // path: '/app/blog/desc/:id',
-  path: '/',
-  component: IndexPage
+  path: '/blog/desc',
+  // path: '/',
+  component: BlogDesc
 }, {
   key: '文章收藏',
   // path: '/app/collect',
@@ -37,5 +37,9 @@ export const routes = [{
 }, {
   key: '关于我',
   path: '/app/about',
-  component: About
-}]
+  component: IndexPage
+}, {
+  key: '登录',
+  path: '/login',
+  component: Login
+}];

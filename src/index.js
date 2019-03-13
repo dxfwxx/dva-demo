@@ -1,9 +1,11 @@
 import dva from 'dva';
-import './index.css';
+import './index.less';
+import browserHistory from 'react-router';
 
 // 1. Initialize
 // const app = dva();
 const app = dva({
+  history: browserHistory,
     // initialState: {
     //     blogs: {
     //         list: [

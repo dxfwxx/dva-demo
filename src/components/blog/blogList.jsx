@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Table, Popconfirm, Button, Row, Col, IconText, List} from 'antd';
+import {Table, Popconfirm, Button, Row, Col, Icon, List} from 'antd';
 
 function BlogList({onDelete, dataSource, loading, pagination }) {
     console.log(dataSource);
+    const IconText = ({ type, text }) => (
+      <span>
+        <Icon type={type} style={{ marginRight: 8 }} />
+        {text}
+      </span>
+    )
     const columns = [{
         title: 'Name',
         dataIndex: 'name',
