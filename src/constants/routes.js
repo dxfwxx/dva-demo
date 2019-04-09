@@ -26,7 +26,7 @@ export const routes = [{
   component: IndexPage
 }, {
   key: '博客详情',
-  path: '/blog/desc',
+  path: '/blog/desc/:id',
   // path: '/',
   component: BlogDesc
 }, {

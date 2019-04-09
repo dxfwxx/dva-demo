@@ -42,6 +42,9 @@ export default {
                 }
             })
           }
+      },
+      * toDesc({payload}, {put}) {
+        yield put(routerRedux.push(`/blog/desc/${payload.id}`))
       }
   },
   subscriptions: {
@@ -49,8 +52,8 @@ export default {
         dispatch({
             type: 'blogs/query',
             payload: {
-              'pageSize': 10,
-              'pageNum': 1
+              pageSize: 10,
+              pageNum: 1
             }
         });
     },

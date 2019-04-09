@@ -36,27 +36,25 @@ const Blogs = ({blogs, dispatch}) => {
       );
     },
     toDesc(id) {
-      dispatch(
-        routerRedux.push({
-          pathname: '/blog/desc',
-          state: {
-            id
-          },
-        }),
-      );
+      dispatch({
+        type: 'blogs/toDesc',
+        payload: {
+          id
+        }
+      });
     },
     onPageChange(page, pageSize) {
       dispatch({
-        type: 'blog/query',
+        type: 'blogs/query',
         payload: {
-          pageNum: page,
+          pageNum: 2,
           pageSize: pageSize,
         },
       });
     },
     onPageSizeChange(current, pageSize) {
       dispatch({
-        type: 'blog/query',
+        type: 'blogs/query',
         payload: {
           pageNum: 1,
           pageSize,

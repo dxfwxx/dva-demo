@@ -1,5 +1,5 @@
-import React from 'react';
 import { view } from '../services/blog';
+import {routerRedux} from 'dva/router';
 import pathToRegexp from 'path-to-regexp';
 
 export default {
@@ -57,8 +57,13 @@ export default {
       console.log('111111111');
       history.listen((location) => {
         if (location.pathname.indexOf('/blog/desc') >= 0) {
+          const re = pathToRegexp('/blog/desc/:id');
+          const id = re.exec(location.pathname)[0];
           dispatch({
-            type: 'init',
+            type: 'querySuccess',
+            payload: {
+              id
+            }
           });
           dispatch({
             type: 'queryBlogById',

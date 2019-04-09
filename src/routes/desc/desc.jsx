@@ -1,10 +1,10 @@
 import React from 'react';
-import {routerRedux} from 'dva/router';
+import { routerRedux } from 'dva/router';
 import Desc from '../../components/blog/desc/desc';
 import HeaderCustom from '../../components/headers/headerCustom'
 import { connect } from 'dva';
 import { Layout } from 'antd';
-import '../blog/blog.less';
+import './desc.less';
 const { Content, Footer } = Layout;
 
 const BlogDesc = ({desc, dispatch}) => {

@@ -32,7 +32,7 @@ const list = ({
             <List
               itemLayout="vertical"
               size="large"
-              pagination={Object.assign(pagination, {onChange: onPageChange, onShowSizeChange: onPageSizeChange})}
+              pagination={Object.assign(pagination, {onChange: onChange, onShowSizeChange: onShowSizeChange})}
               dataSource={dataSource}
               renderItem={(item, index) => (
                 <List.Item 
@@ -67,8 +67,6 @@ const list = ({
                 </List.Item>
               )}
             />
-            {/* <Pagination key="pagination" {...pagination} onChange={onChange} onShowSizeChange={onShowSizeChange}/> */}
-            {/* <Pagination size="small" total={50} showSizeChanger showQuickJumper onChange={onPageChange} onShowSizeChange={onPageSizeChange}/> */}
           </Col>
           <Col lg={{ span: 6, offset: 1 }} md={{ span: 6, offset: 1 }} xs={{ span: 0 }} >
             <SiderCustom />
