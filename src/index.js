@@ -6,14 +6,6 @@ import browserHistory from 'react-router';
 // const app = dva();
 const app = dva({
   history: browserHistory,
-    // initialState: {
-    //     blogs: {
-    //         list: [
-    //             { name: 'dva', id: 1 },
-    //             { name: 'antd', id: 2 }
-    //         ],
-    //     },
-    // },
 });
 
 // 2. Plugins

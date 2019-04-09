@@ -9,15 +9,7 @@ export default {
     dataSource: [],
     loading: false,
     searchWord: null,
-    pagination: {
-        showSizeChanger: true,
-        showQuickJumper: true,
-        showTotal: total => `共 ${total} 条`,
-        current: 1,
-        total: 0,
-        size: 'default',
-        pageSizeOptions: ['10', '20', '50', '100'],
-    },
+    pagination: {},
   },
   reducers : {
       delete(state, {payload: id}) {
@@ -39,11 +31,13 @@ export default {
                 payload: {
                     dataSource: data.data.data.list,
                     pagination: {
-                        total: data.data.data.totalCount,
-                        current: data.data.data.page,
-                        showTotal: total => `共 ${data.data.data.pages} 条`,
-                        size: data.data.data.pageSize,
+                        total: data.data.data.total,
+                        current: data.data.data.pageNum,
+                        showTotal: total => `共 ${total} 条`,
+                        pageSize: data.data.data.pageSize,
                         pageSizeOptions: ['10', '20', '50', '100'],
+                        showSizeChanger: true,
+                        showQuickJumper: true,
                     }
                 }
             })
@@ -55,8 +49,8 @@ export default {
         dispatch({
             type: 'blogs/query',
             payload: {
-              'pageSize': 1,
-              'pageNum': 2
+              'pageSize': 10,
+              'pageNum': 1
             }
         });
     },

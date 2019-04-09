@@ -15,8 +15,7 @@ const BlogDesc = ({desc, dispatch}) => {
     date,
     content,
     tags } = desc;
-  const contentHeight = document.body.clientHeight - 64 -62;
-  console.log('id', id);
+  const contentHeight = document.body.clientHeight - 64 -62; 
   const blogDescProps = {
     id,
     title, 
