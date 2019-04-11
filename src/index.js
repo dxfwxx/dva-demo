@@ -1,6 +1,6 @@
 import dva from 'dva';
 import './index.less';
-import browserHistory from 'react-router';
+import { browserHistory } from 'dva/router';
 
 // 1. Initialize
 // const app = dva();
@@ -14,6 +14,7 @@ const app = dva({
 // 3. Model
 // app.model(require('./models/example').default);
 require('./models').default.forEach(key => {
+  console.log('xxxx', key.default)
     app.model(key.default)
 });
 

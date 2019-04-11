@@ -15,7 +15,8 @@ const BlogDesc = ({desc, dispatch}) => {
     date,
     content,
     tags } = desc;
-  const contentHeight = document.body.clientHeight - 64 -62; 
+  const contentHeight = document.body.clientHeight - 64 -62;
+  console.log("1111111111-------", desc);
   const blogDescProps = {
     id,
     title, 
@@ -56,16 +57,16 @@ const BlogDesc = ({desc, dispatch}) => {
   }
   return (
     <div className="wrapper">
-      <HeaderCustom></HeaderCustom>
+      {/* <HeaderCustom></HeaderCustom>
       <Layout className="wrapper-container">
         <Layout className="wrapper-content">
           <Content
               style={{ padding: 24, margin: 0, minHeight: contentHeight, height: '100%', overflow: 'initial'}}
-          >
+          > */}
             <Desc {...blogDescProps} />
-          </Content>
+          {/* </Content>
         </Layout>
-      </Layout>
+      </Layout> */}
       
     </div>
   );

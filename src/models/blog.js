@@ -49,13 +49,15 @@ export default {
   },
   subscriptions: {
     setup({ dispatch, history }) {
+      history.listen((location) => {
         dispatch({
-            type: 'blogs/query',
-            payload: {
-              pageSize: 10,
-              pageNum: 1
-            }
+          type: 'blogs/query',
+          payload: {
+            pageSize: 10,
+            pageNum: 1
+          }
         });
+      });
     },
   },
 

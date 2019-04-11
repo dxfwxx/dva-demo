@@ -27,6 +27,7 @@ export default {
     * queryBlogById({payload}, {call, put, select }) {
         const {id} = yield select(state => state.desc);
         const data = yield call(view, {id});
+        console.log("desc", data);
         if(data && data.code === 200) {
           yield put({
             type: 'querySuccess',
@@ -41,20 +42,19 @@ export default {
           })
         }
     },
-    * init({payload}, {put, select}) {
-        const {id} = yield select(state => state.routing.locationBeforeTransitions.state);
-        yield put({
-          type: 'updateState',
-          payload: {
-            id,
-          }
-        })
-    }
+    // * init({payload}, {put, select}) {
+    //     const {id} = yield select(state => state.routing.locationBeforeTransitions.state);
+    //     yield put({
+    //       type: 'updateState',
+    //       payload: {
+    //         id,
+    //       }
+    //     })
+    // }
   },
 
-  subscirptions: {
+  subscriptions: {
     setup({dispatch, history}) {
-      console.log('111111111');
       history.listen((location) => {
         if (location.pathname.indexOf('/blog/desc') >= 0) {
           const re = pathToRegexp('/blog/desc/:id');
@@ -65,8 +65,13 @@ export default {
               id
             }
           });
+          
+          console.log(location);
           dispatch({
             type: 'queryBlogById',
+            payload: {
+              id
+            }
           })
         }
       })

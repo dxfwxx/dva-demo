@@ -9,7 +9,7 @@ const { Content, Footer } = Layout;
 
 const Blogs = ({blogs, dispatch}) => {
   const { loading, dataSource, pagination, searchWord } = blogs;
-  const contentHeight = document.body.clientHeight - 64 -62;
+  console.log("____", blogs);
   const blogListProps = {
     dataSource,
     loading,
@@ -63,15 +63,15 @@ const Blogs = ({blogs, dispatch}) => {
     },
   }
   return (
-    <div className="wrapper">
-      <HeaderCustom></HeaderCustom>
+    <div >
+      {/* <HeaderCustom></HeaderCustom>
       <Layout className="wrapper-container">
         <Layout className="wrapper-content">
-          <Content style={{ padding: 24, margin: 0, minHeight: contentHeight, height: '100%', overflow: 'initial'}} >
+          <Content style={{ padding: 24, margin: 0, minHeight: contentHeight, height: '100%', overflow: 'initial'}} > */}
             <BlogList {...blogListProps} />
-          </Content>
+          {/* </Content>
         </Layout>
-      </Layout>
+      </Layout> */}
       
     </div>
   );

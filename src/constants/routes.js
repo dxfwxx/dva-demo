@@ -9,6 +9,8 @@ export const routes = [{
   key: '首页',
   path: '/blog',
   component: Blogs
+ 
+
 }, {
   key: '标签搜索',
   // path: '/app/tags/:tags',
